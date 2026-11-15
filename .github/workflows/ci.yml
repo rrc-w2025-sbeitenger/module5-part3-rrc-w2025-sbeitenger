@@ -10,7 +10,7 @@ on:
 
 jobs:
   test-backend:
-    runs-on: ubuntu-latest   ## Use GitHub’s hosted Ubuntu runner
+    runs-on: ubuntu-24.04
 
     # Spin up a MongoDB sidecar container for the job (even though tests use mongomock).
     services:
@@ -34,7 +34,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13.3' # Match the project’s Python version
+          python-version: '3.10' #same as backend/Dockerfile
           
       - name: Install backend dependencies
         working-directory: ./backend
